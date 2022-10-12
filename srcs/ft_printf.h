@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:42:51 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/11 22:52:35 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/12 22:45:30 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 int	ft_printf(const char *format, ...);
 int	print_char(int chr);
@@ -25,6 +26,6 @@ int	print_int(int integer);
 int	print_unint(unsigned int un_int);
 int	print_x(unsigned int un_int);
 int	print_bx(unsigned int un_int);
-int	print_ptr(uintptr_t uint_ptr);
+int	print_ptr(unsigned long long uint_ptr);
 
 #endif

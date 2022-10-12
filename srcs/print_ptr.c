@@ -6,50 +6,50 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 00:09:11 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/11 22:39:00 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/12 23:47:19 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 #include	"../libft/libft.h"
 
-void	ft_putptr_fd(uintptr_t uint_ptr, int fd)
+void	ft_putptr_fd(unsigned long long ulonglong_ptr, int fd)
 {
 	char	num;
 
-	if (uint_ptr > 15)
+	if (ulonglong_ptr > 15)
 	{
-		ft_putptr_fd(uint_ptr / 16, fd);
-		ft_putptr_fd(uint_ptr % 16, fd);
+		ft_putptr_fd(ulonglong_ptr / 16, fd);
+		ft_putptr_fd(ulonglong_ptr % 16, fd);
 	}
 	else
 	{
-		if (uint_ptr > 9)
-			num = (int)uint_ptr - 10 + 'a';
+		if (ulonglong_ptr > 9)
+			num = (int)ulonglong_ptr - 10 + 'a';
 		else
-			num = (int)uint_ptr + '0';
+			num = (int)ulonglong_ptr + '0';
 		ft_putchar_fd(num, fd);
 	}
 }
 
-int	print_ptr(uintptr_t uint_ptr)
+int	print_ptr(unsigned long long ulonglong_ptr)
 {
-	int			count_digit;
-	uintptr_t	temp_intptr;
+	int					count_digit;
+	unsigned long long	temp_intptr;
 
-	if (uint_ptr == 0)
+	if (ulonglong_ptr == 0)
 	{
 		ft_putstr_fd("0x0", 1);
 		return (3);
 	}
 	ft_putstr_fd("0x", 1);
-	temp_intptr = uint_ptr;
+	temp_intptr = ulonglong_ptr;
 	count_digit = 2;
 	while (temp_intptr != 0)
 	{
 		count_digit ++;
 		temp_intptr /= 16;
 	}
-	ft_putptr_fd(uint_ptr, 1);
+	ft_putptr_fd(ulonglong_ptr, 1);
 	return (count_digit);
 }

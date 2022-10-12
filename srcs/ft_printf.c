@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:53:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/11 22:55:55 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/12 23:54:10 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,30 @@ int	print_format(char format, va_list *args)
 	return (ret_count);
 }
 
+int	check_count(int ret_count)
+{
+	if ((unsigned int)ret_count > INT_MAX)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	i;
 	int		ret_count;
-	int		fd;
 
-	fd = 1;
 	va_start(args, format);
 	i = 0;
 	ret_count = 0;
 	while (format[i] != '\0')
 	{
+		if (check_count(ret_count))
+			return (-1);
 		if (format[i] != '%')
 		{
-			ft_putchar_fd(format[i], fd);
+			ft_putchar_fd(format[i], 1);
 			ret_count++;
 		}
 		else if (format[i + 1] != '\0')
@@ -68,17 +76,16 @@ int	ft_printf(const char *format, ...)
 // int main (void)
 // {
 // 	//char *string = "dcba";
-// 	//char chr = 'a';
+// 	char chr = 'a';
 // 	//int	integer = 0;
-// 	char	*ptr = NULL;
+// 	//char	*ptr = NULL;
 // 	int	int_printf = 0;
 // 	int	int_ft_printf = 0;
 
-//	printf("the return (of printf %d \n",printf("the variable is %s",string)));
-// 	int_printf = printf("ptr is %s \n", ptr);
+// 	int_printf = printf("ptr is %c \n", chr);
 // 	printf("count_ptr is %d \n", int_printf);
 // 	//sleep(10);
-// 	int_ft_printf = ft_printf("ft_ptr is %s \n", ptr);
+// 	int_ft_printf = ft_printf("ft_ptr is %c \n", chr);
 // 	printf("count_ft_ptr is %d \n", int_ft_printf);
 // 	//sleep(10);
 // 	//printf("x is %x \n", integer);

@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:19:33 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/11 22:22:20 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/12 21:59:05 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	print_unint(unsigned int integer)
 	count = 0;
 	temp_int = integer;
 	if (integer == 0)
-		count ++;
-	if (temp_int < 0)
 		count ++;
 	while (temp_int != 0)
 	{

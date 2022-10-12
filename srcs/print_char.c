@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:19:33 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/11 22:54:58 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/12 23:45:58 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 int	print_char(int chr)
 {
-	ft_putchar_fd(chr, (int)1);
+	ft_putchar_fd(chr, 1);
 	return (1);
 }

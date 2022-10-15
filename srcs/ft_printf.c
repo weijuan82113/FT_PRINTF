@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:53:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/12 23:54:10 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/15 11:28:29 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	print_format(char format, va_list *args)
 
 int	check_count(int ret_count)
 {
-	if ((unsigned int)ret_count > INT_MAX)
+	if ((unsigned int)ret_count + 1 > INT_MAX)
 		return (1);
 	else
 		return (0);

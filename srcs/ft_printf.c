@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:53:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/15 11:29:47 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/15 13:30:51 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	print_format(char format, va_list *args)
 	else if (format == 's')
 		ret_count += print_str(va_arg(*args, char *));
 	else if (format == 'p')
-		ret_count += print_ptr(va_arg(*args, uintptr_t));
+		ret_count += print_ptr(va_arg(*args, unsigned long long));
 	else if (format == 'd' || format == 'i')
 		ret_count += print_int(va_arg(*args, int));
 	else if (format == 'u')

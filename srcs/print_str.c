@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:39:26 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/12 23:46:15 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/30 14:17:39 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	print_str(char *str)
 		ft_putstr_fd("(null)", 1);
 		return (6);
 	}
-	ft_putstr_fd(str, 1);
 	len_str = ft_strlen(str);
-	return (len_str);
+	if (len_str > INT_MAX)
+		return (-1);
+	ft_putstr_fd(str, 1);
+	return ((int)len_str);
 }

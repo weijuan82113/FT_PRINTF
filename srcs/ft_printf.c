@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:53:59 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/15 13:30:51 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/30 14:10:08 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,23 +72,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (ret_count);
 }
-
-// int main (void)
-// {
-// 	//char *string = "dcba";
-// 	char chr = 'a';
-// 	//int	integer = 0;
-// 	//char	*ptr = NULL;
-// 	int	int_printf = 0;
-// 	int	int_ft_printf = 0;
-
-// 	int_printf = printf("ptr is %c \n", chr);
-// 	printf("count_ptr is %d \n", int_printf);
-// 	//sleep(10);
-// 	int_ft_printf = ft_printf("ft_ptr is %c \n", chr);
-// 	printf("count_ft_ptr is %d \n", int_ft_printf);
-// 	//sleep(10);
-// 	//printf("x is %x \n", integer);
-// 	//ft_printf("unint_x is %x \n", integer);
-// 	return (0);
-// }
